@@ -1,4 +1,3 @@
-<!-- OPTION 4: Simple Direct Embed (Chrome/Safari) -->
 <!DOCTYPE html>
 <html>
 
@@ -15,42 +14,17 @@
             width: 100%;
             height: 100vh;
         }
-
-        .fallback {
-            display: none;
-            text-align: center;
-            padding: 50px;
-            font-family: Arial, sans-serif;
-        }
     </style>
 </head>
 
 <body>
     <div class="pdf-container">
-        <embed id="pdf-embed"
-            src="https://firebasestorage.googleapis.com/v0/b/persnal-b253d.appspot.com/o/eservice.pdf?alt=media&token=1ce60ce5-08d4-4249-8a7d-b1324384a722#toolbar=0"
+        <object id="pdf-embed"
+            data="https://firebasestorage.googleapis.com/v0/b/persnal-b253d.appspot.com/o/eservice.pdf?alt=media&token=1ce60ce5-08d4-4249-8a7d-b1324384a722#toolbar=0"
             type="application/pdf" width="100%" height="100%">
-
-
     </div>
 
-    <script>
-        // Check if PDF loaded, show fallback if not
-        setTimeout(() => {
-            const embed = document.getElementById('pdf-embed');
-            const fallback = document.getElementById('fallback');
 
-            try {
-                // If PDF didn't load properly, show fallback
-                if (!embed.contentDocument) {
-                    fallback.style.display = 'block';
-                }
-            } catch (e) {
-                // Fallback for cross-origin restrictions
-                console.log('PDF embed fallback activated');
-            }
-        }, 3000);
-    </script>
 </body>
 
 </html>
